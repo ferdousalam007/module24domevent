@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event common</title>
+</head>
+<body>
+    <p id="click-method"></p>
+    <input id="input-name" type="text">
+    <button id="update">update</button>
+    <br>
+    <br>
+    <br>
+    <button onclick="handleJustFunctionClick()">just function</button>
+    <button id="direct-event">direct event Lesener</button>
+
+
+    <script>
+        //using function
+        function handleJustFunctionClick(){
+           const p = document.getElementById('click-method');
+           p.innerText = 'hello this parag';
+        }
+        //direct
+        document.getElementById('direct-event').addEventListener('click',function(){
+            const p =document.getElementById('click-method');
+            p.innerText = 'this is another direct event method';
+        })
+        //input value by form
+        document.getElementById('update').addEventListener('click',function(){
+            const inputText = document.getElementById('input-name');
+            const p = document.getElementById('click-method');
+             p.innerText = inputText.value;
+             inputText.value ="";
+        })
+
+    </script>
+</body>
+</html>

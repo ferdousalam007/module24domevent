@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>comments box</title>
+</head>
+<body>
+    <h1>your all comments</h1>
+    <div id="commets-list">
+     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolor, porro cupiditate cum eligendi mollitia deserunt quisquam ipsam. Quam architecto fuga porro. A maxime accusamus ea, quae enim architecto adipisci?</p>
+     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolor, porro cupiditate cum eligendi mollitia deserunt quisquam ipsam. Quam architecto fuga porro. A maxime accusamus ea, quae enim architecto adipisci?</p>
+    </div>
+    <div>
+        <h2>add your comments</h2>
+        <textarea id="commets-field" cols="40" rows="5"></textarea>
+        <br>
+        <br>
+        <button id="post">post</button>
+    </div>
+    <script>
+        document.getElementById('post').addEventListener('click',function(){
+            //find comment value
+            const commentBox = document.getElementById('commets-field');
+            const userCommets = commentBox.value;
+            //adding paragraph for set comments value
+            const newComment =document.createElement('p');
+            newComment.innerText=userCommets;
+            console.log(newComment);
+
+            //append the comments for comments list
+            const commentsContainer = document.getElementById('commets-list');
+            commentsContainer.appendChild(newComment);
+            //comments box create blank
+            commentBox.value = "";
+
+            
+        })
+    </script>
+</body>
+</html>
